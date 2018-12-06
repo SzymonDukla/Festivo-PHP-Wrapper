@@ -1,8 +1,19 @@
 {
     "name": "szymondukla/holiday-api-wrapper",
+    "version": "1.0.0",
+    "license": "MIT",
+    "keywords": [
+        "holidays",
+        "holiday api",
+        "office holidays"
+    ],
+    "support": {
+        "issues": "https://github.com/SzymonDukla/HolidayAPI-Wrapper/issues"
+    },
     "description": "Holiday API is the only service offering it's powerful data completely free of charge.",
     "type": "library",
     "require": {
+        "php": "^7.0",
         "guzzlehttp/guzzle": "^6.3"
     },
     "authors": [
@@ -10,5 +21,10 @@
             "name": "Szymon Dukla",
             "email": "7996340+SzymonDukla@users.noreply.github.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "SzymonDukla\\HolidayApi\\": "src"
+        }
+    }
 }

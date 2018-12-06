@@ -60,7 +60,7 @@ You can filter returned holidays by date and upcoming or past events:
 | pretty        | true      |      no    | boolean; prettifies returned JSON for a better human reading performance
 
 ### Installation Instructions
-1. Run `composer install`
+1. Download and install package from Composer via ```composer require szymondukla/holiday-api-wrapper```. You can also download an archive and setup it manually using ```composer install``` command.
 2. Include main class into your project and add required ```use``` declaration, i.e.
 ```php
 <?php
