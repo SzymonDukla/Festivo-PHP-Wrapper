@@ -1,5 +1,6 @@
 {
     "name": "SzymonDukla/holiday-api-wrapper",
+    "description": "Holiday API is the only service offering it's powerful data completely free of charge.",
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^6.3"
