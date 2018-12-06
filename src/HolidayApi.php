@@ -28,7 +28,7 @@ class HolidayApi {
             return $this;
         } catch (\Exception $exception)
         {
-            return header("HTTP/1.1 " . $exception->getCode());
+            return die($exception->getMessage());
         }
     }
     
@@ -39,8 +39,6 @@ class HolidayApi {
                 return header("HTTP/1.1 400");
             
             $year 	= $year ?? date('Y');
-            $month 	= $month ?? date('n');
-            $day 	= $day ?? date('j');
             
             $holidays = $this->client->get('holidays',
                 [
@@ -58,14 +56,14 @@ class HolidayApi {
             if($holidays->getStatusCode() == 200)
             {
                 $res = json_decode($holidays->getBody());
-                $holidays = !empty($res->holidays) ? $res->holidays[0] : [];
+                $holidays = !empty($res->holidays) ? $res->holidays : [];
             }
             
             return $holidays;
             
         } catch (\Exception $exception)
         {
-            return header("HTTP/1.1 " . $exception->getCode());
+            return die($exception->getMessage());
         }
     }
     
