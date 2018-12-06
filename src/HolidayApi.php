@@ -25,7 +25,7 @@ class HolidayApi {
                     self::VERSION),
             ]);
             
-            return true;
+            return $this;
         } catch (\Exception $exception)
         {
             return header("HTTP/1.1 " . $exception->getCode());
