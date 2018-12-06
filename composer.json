@@ -1,0 +1,13 @@
+{
+    "name": "szymon/holiday-api-wrapper",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Szymon Dukla",
+            "email": "7996340+SzymonDukla@users.noreply.github.com"
+        }
+    ]
+}
