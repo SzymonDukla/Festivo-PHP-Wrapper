@@ -19,5 +19,3 @@
 <!--- see how your change affects other areas of the code, etc. -->
 
 ## Screenshots (if appropriate):
-GET | 302 | 198 ms | GitHub.com
-GET | 200 | 256 ms
