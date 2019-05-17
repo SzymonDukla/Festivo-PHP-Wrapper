@@ -10,9 +10,18 @@ class HolidayApi {
     const VERSION = 1;
     
     protected $client;
+    protected $apiKey;
     
-    public function __construct() {
-        return $this;
+    public function __construct($apiKey) {
+        try {
+            if(!is_string($apiKey) || !$apiKey || is_null($apiKey))
+                throw new \Exception("API key not provided!");
+            $this->apiKey = $apiKey;
+            return $this;
+        } catch (\Exception $ex) {
+            return $ex;
+        }
+        
     }
     
     public function makeClient()
@@ -43,6 +52,7 @@ class HolidayApi {
             $holidays = $this->client->get('holidays',
                 [
                     'query' => [
+                        'api_key'   => $this->apiKey,
                         'country' 	=> $country,
                         'year' 		=> $year,
                         'month' 	=> $month,

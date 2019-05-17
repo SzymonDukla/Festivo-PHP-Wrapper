@@ -1,5 +1,5 @@
 #   Holiday API PHP Wrapper
-API Version: 1.0
+API Version: 1.1
 
 Documentation <https://holidayapi.pl/documentation>
 
@@ -7,7 +7,8 @@ Documentation <https://holidayapi.pl/documentation>
 
 #### Table of contents
 - [About](#about)
-- [Suported countries](#countries)
+- [Obtaining an API Key](#api-key)
+- [Supported countries](#countries)
 - [Endpoints](#endpoints)
 - [Parameters](#parameters)
 - [Installation Instructions](#installation-instructions)
@@ -17,50 +18,37 @@ Documentation <https://holidayapi.pl/documentation>
 ### About
 Holiday API is the only service offering it's powerful data completely free of charge.
 
+### API Key
+As of 27th of May 2019 we require all users to sign up and generate their API key.
+We offer a spectrum of different subscription plans, including our *Always Free* plan. Please check [our website](https://holidayapi.pl#prices) for more.
+
 ### Countries
-Currently supported countries:
-
-| Name          | ISO 3166-1 alpha-2   |
-| ------------- |:--------------------:|
-| Belgium       | BA                   |
-| Brazil        | BR                   |
-| Canada        | CA                   |
-| Czechia       | CZ                   |
-| Denmark       | DK                   |
-| Germany       | DE                   |
-| France        | FR                   |
-| Great Britain | GB                   |
-| Norway        | NO                   |
-| Poland        | PL                   |
-| Russia        | RU                   |
-| Slovakia      | SK                   |
-| Sierra Leone  | SL                   |
-| Vietnam       | VN                   |
-| Indonesia     | ID                   |
-| United States | US                   |
-
-New countries and regions are coming soon. Please refer to the [list on the main page](https://holidayapi.pl) for the most recent list of supported countries.
+Full list of countries is available at [holidayapi.pl](https://holidayapi.pl).
 
 ### Endpoints
 Currently only two endpoints are supported:
 
 * ```/v1/holidays``` - access holiday data
 
+*Please be aware we'll be rolling out new endpoint ```/api/v2/holidays``` in mid-June!*
+
 ### Parameters
 You can filter returned holidays by date and upcoming or past events:
 
 | Name          | Example   | Mandatory  | Description |
 | ------------- |:---------:| ----------:| -----------------------------------------------------------------------------: |
-| country       | PL        |     yes    | [ISO 3166-1 alpha-2](https://www.nationsonline.org/oneworld/country_code_list.htm) format (BE, BR, CA, CZ, DE, FR, GB, NO, PL, SK, SL, ID, US) |
-| year          | 2018      |     yes    | [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format (CCYY)
-| month         | 4 or 04   |      no    | 1 or 2 digit month (1-12)
-| day           | 7 or 07   |      no    | 1 or 2 digit day (1-31 depending on the month)
-| previous      | false     |      no    | boolean; returns the previous holidays based on the date (works with all parameters listed before)
-| upcoming      | true      |      no    | boolean; returns the previous holidays based on the date (works with all parameters listed before *except* previous)
-| pretty        | true      |      no    | boolean; prettifies returned JSON for a better human reading performance
+| api_key       | af543g6454hh567h565665hgf456  |     yes    | A key available on your Dashboard page once you sing up and sign into your account. Don't have an account yet? [Get started FOR FREE!](https://www.nationsonline.org/oneworld/country_code_list.htm) |
+| country       | PL                            |     yes    | [ISO 3166-1 alpha-2](https://www.nationsonline.org/oneworld/country_code_list.htm) format |
+| year          | 2018                          |     yes    | [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format (CCYY)
+| month         | 4 or 04                       |      no    | 1 or 2 digit month (1-12)
+| day           | 7 or 07                       |      no    | 1 or 2 digit day (1-31 depending on the month)
+| previous      | false                         |      no    | boolean; returns the previous holidays based on the date (works with all parameters listed before)
+| upcoming      | true                          |      no    | boolean; returns the previous holidays based on the date (works with all parameters listed before *except* previous)
+| pretty        | true                          |      no    | boolean; prettifies returned JSON for a better human reading performance
+| public        | true                          |      no    | boolean; returns only official, public holidays (Premium and Enterprise plan only)
 
 ### Installation Instructions
-1. Download and install package from Composer via ```composer require szymondukla/holiday-api-wrapper```. You can also download an archive and setup it manually using ```composer install``` command.
+1. Download and install package from Composer via ```composer require szymondukla/holiday-api-wrapper:"^1.1"```. You can also download an archive and setup it manually using ```composer install``` command.
 2. Include main class into your project and add required ```use``` declaration, i.e.
 ```php
 <?php
@@ -70,7 +58,8 @@ require_once( __DIR__ . /HolidayApi.php);
 
 ...
 ```
-3. Initiate the library with ```$handle = new HolidayApi()->makeClient();```
+3. Initiate the library with ```$handle = new HolidayApi('YOUR API KEY')->makeClient();```
+4. Replace `YOUR API KEY` with [API Key](#api-key) generated as per instructions
 4. From now on you can use $handle to access holiday information for a given country using ```$handle->getHolidays('PL')```. To return only holidays matching specific conditions, you can pass them as parameters:
 ```        
                                        YYYY  MM  DD
