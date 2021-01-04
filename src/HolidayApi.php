@@ -6,8 +6,8 @@ use GuzzleHttp;
 
 class HolidayApi {
     
-    const BASE_URI = 'https://holidayapi.pl';
-    const VERSION = 1;
+    const BASE_URI = 'https://api.getfestivo.com';
+    const VERSION = 2;
     
     protected $client;
     protected $apiKey;

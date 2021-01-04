@@ -1,9 +1,7 @@
-#   Holiday API PHP Wrapper
+#   Festivo Holiday API PHP Wrapper
 API Version: 1.1
 
-Documentation <https://holidayapi.pl/documentation>
-
-*[Psst! Have a look at my other project!](https://www.amaranthapp.com?utm_source=github.com&utm_medium=holidayapi-wrapper)*
+Documentation <https://getfestivo.com/documentation>
 
 #### Table of contents
 - [About](#about)
@@ -20,17 +18,16 @@ Holiday API is the only service offering it's powerful data completely free of c
 
 ### API Key
 As of 27th of May 2019 we require all users to sign up and generate their API key.
-We offer a spectrum of different subscription plans, including our *Always Free* plan. Please check [our website](https://holidayapi.pl#prices) for more.
+We offer a spectrum of different subscription plans, including our *Always Free* plan. Please check [our website](https://getfestivo.com#prices) for more.
 
 ### Countries
-Full list of countries is available at [holidayapi.pl](https://holidayapi.pl).
+Full list of countries is available at [getfestivo.com](https://getfestivo.com).
 
 ### Endpoints
-Currently only two endpoints are supported:
+Currently, only two endpoints are supported:
 
-* ```/v1/holidays``` - access holiday data
-
-*Please be aware we'll be rolling out new endpoint ```/api/v2/holidays``` in mid-June!*
+* ```/v2/holidays``` - access holiday data
+Please be aware we'll be rolling out new endpoint ```/api/v2/holidays``` in mid-June!*
 
 ### Parameters
 You can filter returned holidays by date and upcoming or past events:
@@ -46,6 +43,8 @@ You can filter returned holidays by date and upcoming or past events:
 | upcoming      | true                          |      no    | boolean; returns the previous holidays based on the date (works with all parameters listed before *except* previous)
 | pretty        | true                          |      no    | boolean; prettifies returned JSON for a better human reading performance
 | public        | true                          |      no    | boolean; returns only official, public holidays (Premium and Enterprise plan only)
+
+*Full list of parameters is available in [Documentation](https://getfestivo.com/documentation#filters)
 
 ### Installation Instructions
 1. Download and install package from Composer via ```composer require szymondukla/holiday-api-wrapper:"^1.1"```. You can also download an archive and setup it manually using ```composer install``` command.
@@ -63,7 +62,7 @@ require_once( __DIR__ . /HolidayApi.php);
 4. From now on you can use $handle to access holiday information for a given country using ```$handle->getHolidays('PL')```. To return only holidays matching specific conditions, you can pass them as parameters:
 ```        
                                        YYYY  MM  DD
-$holidays = $handle->getHolidays('PL', 2018, 12, 06)
+$holidays = $handle->getHolidays('US', 2021, 12, 06)
 ```
 
 
@@ -86,4 +85,4 @@ Before opening an issue there are a couple of considerations:
 * **Show that you have made an attempt** to *look into the issue*.
 * **Check** to see if the issue you are *reporting is a duplicate* of a previous reported issue.
 * **Follow these instructions and show us that you have tried.**
-* If you have a questions or comments don't hesitate to [give me a shout](mailto:hello@szymondukla.com)!
+* If you have a questions or comments don't hesitate to [give us a shout](mailto:hello@getfestivo.com)!
