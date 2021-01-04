@@ -4,7 +4,6 @@ API Version: 1.1
 Documentation <https://getfestivo.com/documentation>
 
 #### Table of contents
-- [About](#about)
 - [Obtaining an API Key](#api-key)
 - [Supported countries](#countries)
 - [Endpoints](#endpoints)
@@ -13,12 +12,9 @@ Documentation <https://getfestivo.com/documentation>
 - [File Tree](#file-tree)
 - [Opening an Issue](#opening-an-issue)
 
-### About
-Holiday API is the only service offering it's powerful data completely free of charge.
-
 ### API Key
 As of 27th of May 2019 we require all users to sign up and generate their API key.
-We offer a spectrum of different subscription plans, including our *Always Free* plan. Please check [our website](https://getfestivo.com#prices) for more.
+We offer a spectrum of different subscription plans, including our *Developer* plan. Please check [your account](https://app.getfestivo.com) for more information.
 
 ### Countries
 Full list of countries is available at [getfestivo.com](https://getfestivo.com).
@@ -27,7 +23,6 @@ Full list of countries is available at [getfestivo.com](https://getfestivo.com).
 Currently, only two endpoints are supported:
 
 * ```/v2/holidays``` - access holiday data
-Please be aware we'll be rolling out new endpoint ```/api/v2/holidays``` in mid-June!*
 
 ### Parameters
 You can filter returned holidays by date and upcoming or past events:
@@ -44,10 +39,10 @@ You can filter returned holidays by date and upcoming or past events:
 | pretty        | true                          |      no    | boolean; prettifies returned JSON for a better human reading performance
 | public        | true                          |      no    | boolean; returns only official, public holidays (Premium and Enterprise plan only)
 
-*Full list of parameters is available in [Documentation](https://getfestivo.com/documentation#filters)
+*Full list of parameters is available in our [Documentation](https://getfestivo.com/documentation#filters)*
 
 ### Installation Instructions
-1. Download and install package from Composer via ```composer require szymondukla/holiday-api-wrapper:"^1.1"```. You can also download an archive and setup it manually using ```composer install``` command.
+1. Download and install package from Composer via ```composer require szymondukla/holiday-api-wrapper:"^1.2"```. You can also download an archive and setup it manually using ```composer install``` command.
 2. Include main class into your project and add required ```use``` declaration, i.e.
 ```php
 <?php
